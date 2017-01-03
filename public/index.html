@@ -2,13 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-
-    <title>R7 FrontEnd Test</title>
-
+    <title>R7 FrontEnd Test</title>	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/style.css" media="all">
   </head>
-  <body>
-      <!-- let's code :D -->
+  <body> 
+	<div class="rank-box">
+		<div class="rank-header">
+			<h1>
+				<img src="images/header.png" alt="Ranking - A Fazenda">
+			</h1>
+		</div>
+		<div id="rank-target" class="rank-body"></div>
+	</div>
 
+	<!-- Start the template -->
+	<script type="text/template" id="rank-template">		
+		<% _.each(items, function(item, key, list) { %>		
+		<div class="rank-item<%= (key % 2 == 0) ? ' rank-item-even' : ' rank-item-odd' %>">	
+			<div class="rank-person">
+				<div class="rank-pic">
+					<img src="<%= item.picture %>" alt="<%= item.name %>">				
+				</div>
+				<span class="rank-num"><%= key + 1 %></span>
+				<div class="rank-name">
+					<h2><%= item.name %></h2>
+					<h3><%= item.description %></h3>
+				</div>
+			</div>
+			<div class="rank-stats">
+				<div class="rank-stats-pos">
+					<span>Gostam</span>
+					<%= rankApp.getPercent(item.positive, item.negative) %>%
+				</div>
+				<div class="rank-stats-neg">
+					<span>Não Gostam</span>
+					<%= rankApp.getPercent(item.negative, item.positive) %>%
+				</div>			
+			</div>			
+		</div>		
+		<% });%>
+	</script>
+	<!-- End of the template -->
+
+	<script src="javascripts/underscore-min.js"></script>
     <script src="javascripts/main.js"></script> 
 </html>

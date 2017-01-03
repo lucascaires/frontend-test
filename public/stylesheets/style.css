@@ -1,5 +1,64 @@
-body {
-  text-align: center;
-  font-size: 12px;
-  font-family: "Arial, sans-serif";
-}
+html { box-sizing: border-box; }
+
+*, *:before, *:after { box-sizing: inherit; }
+
+body { background-color: #272727; font-family: 'Montserrat', sans-serif; }
+
+h1, h2, h3 { margin: 0; font-weight: normal; }
+
+/** Rank */
+.rank-header { text-align: right; }
+
+.rank-box { width: 375px; margin: 100px auto; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: -moz-none; -o-user-select: none; user-select: none; }
+
+.rank-body { margin-left: 32px; }
+
+.rank-item { padding: 9px 15px 7px; font-size: 0; position: relative; cursor: pointer; }
+
+.rank-item-even { background-color: #fff; }
+
+.rank-item-odd { background-color: #f2f1f1; }
+
+.rank-item:first-child { border-radius: 2px 2px 0 0; }
+
+.rank-item:last-child { border-radius: 0 0 2px 2px; }
+
+.rank-person { white-space: nowrap; overflow: hidden; position: relative; }
+
+.rank-pic, .rank-name { display: inline-block; vertical-align: middle; }
+
+.rank-pic { width: 66px; height: 66px; border-radius: 50%; border: 5px solid #ba3638; background-color: #ba3638; overflow: hidden; position: relative; }
+
+.rank-pic img { position: absolute; left: 50%; transform: translate(-50%, 0); width: 80px; height: auto; }
+
+.rank-num { position: absolute; display: block; width: 20px; height: 20px; font-size: 14px; background-color: #fff; text-align: center; border-radius: 40px; border: 1px solid #707070; color: #707070; bottom: 0px; left: 42px; }
+
+.rank-name { padding-left: 20px; }
+
+.rank-name h2 { color: #ba3638; font-size: 18px; letter-spacing: -0.25px; }
+
+.rank-name h3 { color: #909090; font-size: 12px; font-weight: 400; }
+
+.rank-stats { position: absolute; z-index: 1; display: none; right: -170px; top: 50%; margin-top: -25px; font-size: 0px; overflow: hidden; padding-left: 11px; }
+
+.rank-stats-pos, .rank-stats-neg { text-align: center; display: inline-block; font-size: 24px; letter-spacing: -1px; color: #909090; height: 50px; background-color: #f8f7f7; overflow: hidden; vertical-align: top; position: relative; z-index: 1; }
+
+.rank-stats-pos span, .rank-stats-neg span { display: block; background-color: #ba3638; color: #fff; font-size: 10px; text-transform: uppercase; padding: 3px 5px; font-weight: 400; letter-spacing: 0px; }
+
+.rank-stats-pos { border-right: 1px solid #8c8b8b; width: 67px; border-radius: 5px 0 0 5px; }
+
+.rank-stats-neg { width: 88px; border-radius: 0 5px 5px 0; }
+
+.rank-stats-neg span { border-left: 1px solid rgba(255, 255, 255, 0.3); }
+
+.rank-stats:before { content: ""; background: url(../images/arrow-left.png) no-repeat; width: 11px; height: 19px; position: absolute; margin-left: -7px; top: 50%; margin-top: -10px; z-index: 0; }
+
+.rank-item:hover { background-color: #ba3638; }
+
+.rank-item:hover h2 { color: #fff; }
+
+.rank-item:hover h3 { color: #330d0e; }
+
+.rank-item:hover .rank-pic { border: 5px solid #fff; }
+
+.rank-item:hover .rank-stats { display: block; }
